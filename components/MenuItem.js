@@ -38,10 +38,10 @@ function MenuItem(props) {
       <Text>Special Instructions: {null}</Text>
       <TextInput
         placeholder="Type instructions here"
-        onSubmitEditing={({ nativeEvent }) => {
+        onSubmitEditing={({ nativeEvent, currentTarget }) => {
           console.log(nativeEvent.text);
           // TODO (part 3): Update special instructions text
-          nativeEvent.target.clear();
+          currentTarget.clear();
         }}
       />
     </View>
@@ -53,12 +53,11 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
-    rowGap: "10px",
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "space-between",
     borderStyle: "solid",
-    borderWidth: "2px",
+    borderWidth: 2,
     width: "90%",
     padding: 30,
     margin: 20,
@@ -68,7 +67,8 @@ const styles = StyleSheet.create({
   },
   photo: {
     resizeMode: "contain",
-    width: "75%",
+    height: 0,
+    width: 0,
     padding: 50,
   },
   buttonsContainer: {
