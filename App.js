@@ -1,11 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import MenuItem from "./components/MenuItem";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text style={{ fontSize: 30 }}>Snap Eating Account</Text>
+      {/* TODO (part 1): update these props with your favorite food item */}
+      <MenuItem name={null} price={null} imageSource={null} />
+      {/* TODO (part 2): add another MenuItem! */}
       <StatusBar style="auto" />
     </View>
   );
@@ -13,9 +17,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
